@@ -2,6 +2,10 @@
 
 云飞自动压缩工具是一款 macOS 自动化压缩工具：自动监控文件夹，发现符合关键词的视频后自动入队并批量压缩，节省时间与空间。
 
+## 作者主页
+- B站：https://space.bilibili.com/17519822
+- YouTube：https://www.youtube.com/@SYS-YunFei
+
 ## 主要功能
 - 自动监控指定文件夹，发现符合关键词的视频后自动入队
 - 多关键词过滤（最多 3 个关键词）
@@ -28,6 +32,10 @@
 # YUNFEI Auto Compress Tool
 
 YUNFEI Auto Compress Tool is a macOS automation utility that monitors folders and automatically queues and batch-compresses videos matching keywords.
+
+## Creator Links
+- Bilibili: https://space.bilibili.com/17519822
+- YouTube: https://www.youtube.com/@SYS-YunFei
 
 ## Key Features
 - Auto-monitor folders and queue new videos by keyword
