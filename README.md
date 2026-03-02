@@ -25,7 +25,7 @@
 - ffmpeg（应用可自动下载）
 
 ## 最新版本
-- DMG：`release/YUNFEI-Auto-Compress_1.0.2.49.dmg`
+- DMG：`release/YUNFEI-Auto-Compress_1.0.2.50.dmg`
 
 ---
 
@@ -56,7 +56,7 @@ YUNFEI Auto Compress Tool is a macOS automation utility that monitors folders an
 - ffmpeg (auto-download supported)
 
 ## Latest Release
-- DMG: `release/YUNFEI-Auto-Compress_1.0.2.49.dmg`
+- DMG: `release/YUNFEI-Auto-Compress_1.0.2.50.dmg`
 
 ## License
 MIT

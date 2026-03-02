@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_NAME="YUNFEI自动压缩_1.0.2.49"
+APP_NAME="YUNFEI自动压缩_1.0.2.50"
 BIN_NAME="SubtitleCompress"
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$ROOT_DIR/build"
@@ -59,15 +59,15 @@ cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
   <key>CFBundleName</key>
-  <string>YUNFEI自动压缩_1.0.2.49</string>
+  <string>YUNFEI自动压缩_1.0.2.50</string>
   <key>CFBundleDisplayName</key>
-  <string>YUNFEI自动压缩_1.0.2.49</string>
+  <string>YUNFEI自动压缩_1.0.2.50</string>
   <key>CFBundleIdentifier</key>
   <string>com.yunfei.subtitle-compress</string>
   <key>CFBundleVersion</key>
-  <string>1.0.2.49</string>
+  <string>1.0.2.50</string>
   <key>CFBundleShortVersionString</key>
-  <string>1.0.2.49</string>
+  <string>1.0.2.50</string>
   <key>CFBundleExecutable</key>
   <string>SubtitleCompress</string>
   <key>CFBundlePackageType</key>

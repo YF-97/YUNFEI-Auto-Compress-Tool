@@ -5,7 +5,7 @@ import AVFoundation
 import UserNotifications
 import Darwin
 
-let appVersion = "1.0.2.49"
+let appVersion = "1.0.2.50"
 let appTitle = "YUNFEI自动压缩_\(appVersion)"
 let appDisplayTitle = appTitle
 let appAuthor = "制作者：摄影师云飞"
@@ -645,8 +645,14 @@ final class AppState: ObservableObject {
         let trimmedKeywords = keywords
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
-        let outputOK = !outputPath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        let ffmpegOK = !ffmpegPath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let outputOK: Bool
+        switch outputMode {
+        case .outputFolder:
+            outputOK = !outputPath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        case .overwrite, .suffix:
+            outputOK = true
+        }
+        let ffmpegOK = resolvedFfmpegPath != nil
         let ok = !trimmedKeywords.isEmpty && outputOK && ffmpegOK
         if !ok {
             showValidationAlert()
@@ -1620,7 +1626,7 @@ struct ContentView: View {
 
     private var updateLogs: [String] {
         [
-            "1.0.2.49 默认关闭/启动校验/单窗口/奶茶按钮",
+            "1.0.2.50 修复启动校验误判（输出路径/压缩器）",
             "1.0.2.48 关键词确认后取消高亮",
             "1.0.2.47 关键词确认高亮与日志完善",
             "1.0.2.46 更多关键词增加确认按钮",
