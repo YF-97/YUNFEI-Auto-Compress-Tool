@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+/build/
+*.app/
+
+# Xcode/Swift
+*.xcworkspace/
+*.xcodeproj/
+
+# Logs
+*.log
