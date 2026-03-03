@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_NAME="YUNFEI自动压缩_1.0.2.50"
+APP_NAME="YUNFEI自动压缩_1.0.2.51"
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$ROOT_DIR/build"
 APP_DIR="$BUILD_DIR/${APP_NAME}.app"

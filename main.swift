@@ -5,7 +5,7 @@ import AVFoundation
 import UserNotifications
 import Darwin
 
-let appVersion = "1.0.2.50"
+let appVersion = "1.0.2.51"
 let appTitle = "YUNFEI自动压缩_\(appVersion)"
 let appDisplayTitle = appTitle
 let appAuthor = "制作者：摄影师云飞"
@@ -1583,9 +1583,15 @@ struct ContentView: View {
         .frame(width: 520, height: 520)
     }
 
-    private func donateImageView(path: String, label: String) -> some View {
-        VStack(spacing: 8) {
-            if let image = NSImage(contentsOfFile: path) {
+    private func bundledImage(named name: String) -> NSImage? {
+        guard let url = Bundle.main.url(forResource: name, withExtension: nil) else { return nil }
+        return NSImage(contentsOf: url)
+    }
+
+    private func donateImageView(resourceName: String, label: String) -> some View {
+        let image = bundledImage(named: resourceName)
+        return VStack(spacing: 8) {
+            if let image {
                 Image(nsImage: image)
                     .resizable()
                     .scaledToFit()
@@ -1612,8 +1618,8 @@ struct ContentView: View {
             Text("请我喝蜜雪冰城")
                 .font(.title2.weight(.bold))
             HStack(spacing: 24) {
-                donateImageView(path: "/Users/yunfei/Desktop/微信.png", label: "微信")
-                donateImageView(path: "/Users/yunfei/Desktop/支付宝.jpg", label: "支付宝")
+                donateImageView(resourceName: "wechat.png", label: "微信")
+                donateImageView(resourceName: "alipay.jpg", label: "支付宝")
             }
             Button("关闭") {
                 showDonate = false
@@ -1626,6 +1632,7 @@ struct ContentView: View {
 
     private var updateLogs: [String] {
         [
+            "1.0.2.51 捐赠二维码内置打包",
             "1.0.2.50 修复启动校验误判（输出路径/压缩器）",
             "1.0.2.48 关键词确认后取消高亮",
             "1.0.2.47 关键词确认高亮与日志完善",
